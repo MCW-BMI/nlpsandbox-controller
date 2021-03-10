@@ -76,8 +76,13 @@ To be a NLP sandbox data hosting site, the site must be able to host 4 main tech
     6e161c526ac2   sagebionetworks/mongo:4.4.3               "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds   0.0.0.0:27017->27017/tcp   data-node-db
     ```
 2. Push data into the data-node.
+    First check out the nlpsandbox-controller repo
     ```bash
-    # set up conda or pipenv environment
+    git clone https://github.com/MCW-BMI/nlpsandbox-controller.git
+    cd nlpsandbox-controller
+    # set up conda or pipenv environment ( python3 -m venv env ( linux, mac ) | py -m venv env ( windows ) 
+    # . env/bin/activate
+    
     pip install nlpsandbox-client
     # Pushes challenge data
     python scripts/push_challenge_data.py
