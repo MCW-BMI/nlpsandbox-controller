@@ -69,12 +69,12 @@ To be a NLP sandbox data hosting site, the site must be able to host 4 main tech
     docker-compose up -d
     ```
     At this point you should see 2 containers running : 
-    ```
+    ```bash
     [crdw@darvin:~/data-node]$ docker ps
     CONTAINER ID   IMAGE                                     COMMAND                  CREATED         STATUS         PORTS                      NAMES
     f3da5a16d984   nlpsandbox/data-node:1.0.1                "/docker-entrypoint.…"   5 seconds ago   Up 5 seconds   0.0.0.0:8080->8080/tcp     data-node
     6e161c526ac2   sagebionetworks/mongo:4.4.3               "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds   0.0.0.0:27017->27017/tcp   data-node-db
-```
+    ```
 2. Push data into the data-node.
     ```bash
     # set up conda or pipenv environment
