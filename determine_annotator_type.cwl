@@ -26,15 +26,16 @@ outputs:
 requirements:
   - class: InlineJavascriptRequirement
 
+# No need to add in more queues other than the initial main queues
 expression: |
 
   ${
     if(inputs.queue == "9614658" || inputs.queue == "9614684"){
-      return {annotator_type: "address"};
+      return {annotator_type: "nlpsandbox:physical-address-annotator"};
     } else if (inputs.queue == "9614652" || inputs.queue == "9614654"){
-      return {annotator_type: "date"};
+      return {annotator_type: "nlpsandbox:date-annotator"};
     } else if (inputs.queue == "9614657" || inputs.queue == "9614685"){
-      return {annotator_type: "person"};
+      return {annotator_type: "nlpsandbox:person-name-annotator"};
     } else {
       throw 'invalid queue';
     }
